@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Terminal</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: rgb(0, 255, 0);
+        }
+
+        .box {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>> Terminal <</div>
+        
+        <div class="box">
+            <h3 class="line1">></h3>
+            <h3 class="line2"></h3>
+            <h3 class="line3"></h3>
+            <h3 class="line4"></h3>
+            <h3 class="line5"></h3>
+        </div>
+    </div>
+    <script>
+        let messages = [
+            "Welome To Hackers Den",
+            "> Initializing Hacking",
+            "> Reading Your Files",
+            "> Password Files Detected",
+            "> Sending all passwords and files to the server",
+            "> Cleaning Up"
+        ];
+
+        async function hacking() {
+            for (let i = 0; i < messages.length; i++) {
+                let messageElement = document.querySelector(`.line${i + 1}`);
+                for (let dots = ""; dots.length < 4; dots += ".") {
+                    messageElement.innerHTML = messages[i] + dots;
+                    await delay(1000);
+                }
+            }
+        }
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Start the hacking animation
+        hacking();
+
+
+    </script>
+
+</body>
+
+</html>
+
